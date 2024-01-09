@@ -1,0 +1,4 @@
+enum SplashStatus {
+  init,
+  loaded,
+}
