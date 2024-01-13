@@ -4,4 +4,10 @@ Future initializeBlocs() async {
   serviceLocator.registerLazySingleton(
     () => SplashBloc(),
   );
+
+  serviceLocator.registerLazySingleton(
+    () => HomeBloc(
+      homeUseCase: serviceLocator<HomeUseCase>(),
+    ),
+  );
 }

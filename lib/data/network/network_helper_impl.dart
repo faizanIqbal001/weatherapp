@@ -7,7 +7,6 @@ import 'package:weatherapp/export.dart';
 class NetworkHelperImpl extends NetworkHelper {
   NetworkHelperImpl();
 
-
   @override
   Future<Either<String, Failure>> get(
     String url, {
@@ -16,7 +15,6 @@ class NetworkHelperImpl extends NetworkHelper {
     try {
       final response = await http.get(
         Uri.parse(url),
-        headers: appendHeader(headers: headers, url: url),
       );
       return handleResponse(response: response);
     } catch (e) {
@@ -169,8 +167,7 @@ class NetworkHelperImpl extends NetworkHelper {
     String? url,
   }) {
     try {
-      headers ??= <String, String>{};
-      headers['Content-Type'] = 'application/json';
+      headers ?? 'application/json';
     } catch (e) {
       debugPrint(e.toString());
     }

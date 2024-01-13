@@ -19,18 +19,39 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocConsumer<SplashBloc, SplashState>(
+        listener: (context, state) {
+          switch (state.status) {
+            case SplashStatus.loaded:
+              break;
+            case SplashStatus.navigateToHome:
+              Future.delayed(
+                const Duration(seconds: 3),
+                    () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.homeScreen,
+                  );
+                },
+              );
+              break;
+
+            case SplashStatus.init:
+            // TODO: Handle this case.
+              break;
+          }
+        },
         builder: (context, state) {
           return Container(
             width: double.infinity,
             height: double.infinity,
-            color: Colors.greenAccent.withOpacity(0.7),
+            color: Colors.white,
             child: const Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.cloud_outlined,
+                    Icons.cloud,
                     color: Colors.cyan,
                     size: 200,
                   ),
@@ -53,25 +74,6 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
           );
-        },
-        listener: (context, state) {
-          switch (state.status) {
-            case SplashStatus.loaded:
-              Future.delayed(
-                const Duration(seconds: 3),
-                () {
-                  Navigator.pushNamed(
-                    context,
-                    AppRoutes.homeScreen,
-                  );
-                },
-              );
-              break;
-
-            case SplashStatus.init:
-            // TODO: Handle this case.
-              break;
-          }
         },
       ),
     );

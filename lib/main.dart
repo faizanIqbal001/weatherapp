@@ -22,10 +22,10 @@ void main() async{
       MultiBlocProvider(
         providers: [
           BlocProvider.value(
-            value: serviceLocator<SplashBloc>()
-              ..add(
-                NavigateToHomeScreen(),
-              ),
+            value: serviceLocator<SplashBloc>(),
+          ),
+          BlocProvider.value(
+            value: serviceLocator<HomeBloc>(),
           ),
         ],
         child: const MyApp(),

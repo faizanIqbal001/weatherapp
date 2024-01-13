@@ -8,6 +8,8 @@ Future initializeDependencies() async {
     [
       initializeNetworkDependencies(),
       initializeBlocs(),
+      initializeRepoDependencies(),
+      initializeUseCaseDependencies(),
     ],
   );
 }
