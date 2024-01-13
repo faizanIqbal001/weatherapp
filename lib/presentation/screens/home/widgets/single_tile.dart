@@ -12,7 +12,8 @@ class WeatherSingleTile extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         border: Border.all(),
-        borderRadius: BorderRadius.circular(10.0),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +25,7 @@ class WeatherSingleTile extends StatelessWidget {
           const SizedBox(height: 10.0),
           Icon(
             Icons.cloud,
-            size: 50.0,
+            size: 80.0,
             color: Colors.cyan.withOpacity(0.6),
           ),
           const SizedBox(height: 10.0),

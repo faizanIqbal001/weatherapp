@@ -65,14 +65,12 @@ class _HomeState extends State<Home> {
                     child: Column(
                       children: [
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         Text(
-                          'Weather In ${state.weatherResponseModel?.city?.name.toString()} °C',
-                          style: const TextStyle(fontSize: 16.0),
-                        ),
-                        const SizedBox(
-                          height: 20,
+                          'Weather In ${state.weatherResponseModel?.city?.name.toString()}',
+                          style: const TextStyle(
+                              fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
                         Expanded(
                           child: ListView.separated(

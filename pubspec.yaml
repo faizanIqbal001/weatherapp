@@ -29,8 +29,6 @@ dependencies:
   equatable:
   get_it:
 
-  #local Storage
-  shared_preferences:
 
 dev_dependencies:
   flutter_test:
