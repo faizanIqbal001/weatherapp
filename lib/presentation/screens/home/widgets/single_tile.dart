@@ -2,9 +2,9 @@ import "package:flutter/material.dart";
 import "package:weatherapp/export.dart";
 
 class WeatherSingleTile extends StatelessWidget {
-  SingleDayData singleDayData;
+  final SingleDayData singleDayData;
 
-  WeatherSingleTile({super.key, required this.singleDayData});
+  const WeatherSingleTile({super.key, required this.singleDayData});
 
   @override
   Widget build(BuildContext context) {
