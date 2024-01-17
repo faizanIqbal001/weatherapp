@@ -1,32 +1,27 @@
 part of 'splash_bloc.dart';
 
 class SplashState extends Equatable {
-  final SplashStatus status;
-  final bool showOnBoarding;
-  final bool isUserLoggedIn;
+  SplashStatus status = SplashStatus.init;
+  int refresh = 0;
 
-  const SplashState({
+  SplashState({
     this.status = SplashStatus.init,
-    this.showOnBoarding = true,
-    this.isUserLoggedIn = true,
+    this.refresh = 0,
   });
 
   SplashState copyWith({
     SplashStatus? status,
-    bool? showOnBoarding,
-    bool? isUserLoggedIn,
+    int? refresh,
   }) {
     return SplashState(
       status: status ?? this.status,
-      showOnBoarding: showOnBoarding ?? this.showOnBoarding,
-      isUserLoggedIn: isUserLoggedIn ?? this.isUserLoggedIn,
+      refresh: refresh ?? this.refresh,
     );
   }
 
   @override
   List<Object?> get props => [
-    status,
-    showOnBoarding,
-    isUserLoggedIn,
-  ];
+        status,
+        refresh,
+      ];
 }

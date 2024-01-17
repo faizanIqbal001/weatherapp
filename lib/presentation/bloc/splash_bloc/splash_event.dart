@@ -6,4 +6,3 @@ abstract class SplashEvent extends Equatable {
 }
 
 class NavigateToHomeScreen extends SplashEvent {}
-
